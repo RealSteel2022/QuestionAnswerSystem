@@ -4,4 +4,4 @@ class AvailableQuestions:
         self.answer = answer
 
     def display_question(self):
-        print(self.question)
+        return self.question
