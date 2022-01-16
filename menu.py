@@ -1,3 +1,6 @@
+from QuestionShower import display_questions
+
+
 def menu_service():
     menu_options()
 
@@ -14,7 +17,8 @@ def menu_options():
 def menu_selection():
     user_choice = input("\n")
     if user_choice == "1":
-        return print("User choice is " + user_choice)  # call the question tester
+        print("User choice is " + user_choice)  # call the question tester
+        display_questions()
     elif user_choice == "2":
         print("User choice is " + user_choice)  # call the shower
     elif user_choice == "3":

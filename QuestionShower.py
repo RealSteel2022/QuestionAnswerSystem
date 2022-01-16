@@ -14,4 +14,11 @@ def setup_questions():
 
 def show_questions():
     return setup_questions()
-# I will use the question set up and show them
+
+
+def display_questions():
+    for question in setup_questions():
+        print(question.display_question())
+
+
+#I will use the question set up and show them
