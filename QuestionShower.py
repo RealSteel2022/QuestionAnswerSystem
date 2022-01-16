@@ -17,8 +17,11 @@ def show_questions():
 
 
 def display_questions():
+    questions = ""
     for question in setup_questions():
         print(question.display_question())
+        questions = questions + question.display_question() + "\n"
+    return questions
 
 
 #I will use the question set up and show them
