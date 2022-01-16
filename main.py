@@ -46,6 +46,6 @@ def menu():
       print(storedQuestions)
       
     # hello world
-    # intelliJ change
+    # intelliJ changes
 
   
