@@ -18,9 +18,9 @@ def menu_selection():
     user_choice = input("\n")
     if user_choice == "1":
         print("User choice is " + user_choice)  # call the question tester
-        display_questions()
     elif user_choice == "2":
         print("User choice is " + user_choice)  # call the shower
+        display_questions()
     elif user_choice == "3":
         print("About to exit")
         menu_exit()
