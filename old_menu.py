@@ -1,11 +1,11 @@
 def menu():
     import random
-    from AvailableQuestions import AvailableQuestions
+    from AvailableQuestionsAnswers import AvailableQuestionsAnswers
 
     storedQuestions = [["When did Nixon become president?", "1969"], ["How many wives did Henry VIII have?", "6"],
                        ["How big was Henry VIII's privy council?", "12 members"], ]
 
-    q1 = AvailableQuestions("When did Nixon become president?", "1969")
+    q1 = AvailableQuestionsAnswers("When did Nixon become president?", "1969")
     # q2 = availableQuestions("How many wives did Henry VIII have?", "6")
     # q3 = availableQuestions("How big was Henry VIII's privy council?", "12 members")
 

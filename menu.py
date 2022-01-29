@@ -1,4 +1,5 @@
 from QuestionShower import display_questions, practice_questions
+from QuestionAndAnswerAdder import setup_questions
 
 
 def menu_service():
@@ -25,9 +26,14 @@ def menu_selection():
     elif user_choice == "3":
         print("About to exit")
         # menu_exit()
+    elif user_choice == "4":
+        print("sus")
+        setup_questions()
     else:
         print("Invalid input")
         menu_options()
+    user_choice = ""
+    menu_options()
 
 
 def menu_exit():

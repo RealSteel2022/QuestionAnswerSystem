@@ -1,11 +1,11 @@
 import unittest
 # from menu import menu
-from AvailableQuestions import AvailableQuestions
+from AvailableQuestionsAnswers import AvailableQuestionsAnswers
 
 
 class TestAvailableQuestions(unittest.TestCase):
     def runTest(self):
-        q1 = AvailableQuestions("hello", "1969")
+        q1 = AvailableQuestionsAnswers("hello", "1969")
         self.assertEqual("hello", q1.question)
 
 
