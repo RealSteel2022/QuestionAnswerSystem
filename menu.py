@@ -1,4 +1,4 @@
-from QuestionShower import display_questions
+from QuestionShower import display_questions, practice_questions
 
 
 def menu_service():
@@ -18,12 +18,13 @@ def menu_selection():
     user_choice = input("\n")
     if user_choice == "1":
         print("User choice is " + user_choice)  # call the question tester
+        practice_questions()
     elif user_choice == "2":
         print("User choice is " + user_choice)  # call the shower
         display_questions()
     elif user_choice == "3":
         print("About to exit")
-        menu_exit()
+        # menu_exit()
     else:
         print("Invalid input")
         menu_options()

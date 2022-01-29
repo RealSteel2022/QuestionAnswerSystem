@@ -1,5 +1,6 @@
 # show questions
 from AvailableQuestions import AvailableQuestions
+from ScoreSaver import *
 
 
 def setup_questions():
@@ -10,6 +11,17 @@ def setup_questions():
     questions_list = [q1, q2, q3]
 
     return questions_list
+
+
+def practice_questions():
+    for answer in setup_questions():
+        user_input = input(answer.display_question())
+        if user_input == answer.show_answers():
+            print("Correct")
+            scored_point()
+        else:
+            print("Incorrect")
+    leaderboard_score()
 
 
 def show_questions():
@@ -23,5 +35,11 @@ def display_questions():
         questions = questions + question.display_question() + "\n"
     return questions
 
+# def show_answers():
+# answers = ""
+# for answer in setup_questions():
+# print(answer.show_answers())
+# answers = answers + answer.show_answers() + "\n"
+# return answers
 
-#I will use the question set up and show them
+# I will use the question set up and show them

@@ -5,3 +5,6 @@ class AvailableQuestions:
 
     def display_question(self):
         return self.question
+
+    def show_answers(self):
+        return self.answer
