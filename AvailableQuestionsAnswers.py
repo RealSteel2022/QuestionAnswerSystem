@@ -9,15 +9,6 @@ class AvailableQuestionsAnswers:
     def show_answers(self):
         return self.answer
 
-
-# def setup_questions():
-#     setup_dict = {'q1': ["When did Nixon become president?", "1969"],
-#                   'q2': ["How many wives did Henry VIII have?", "6"],
-#                   'q3': ["How big was Henry VIII's privy council?", "12 members"]}
-#
-#     question_list = setup_dict.keys()
-#     return question_list
-
 # def setup_questions():
 #     q1 = AvailableQuestionsAnswers("When did Nixon become president?", "1969")
 #     q2 = AvailableQuestionsAnswers("How many wives did Henry VIII have?", "6")

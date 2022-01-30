@@ -1,3 +1,3 @@
-from menu import *
+from Menu import *
 
 menu_service()

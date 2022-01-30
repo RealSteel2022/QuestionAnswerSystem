@@ -1,3 +1,4 @@
+from MenuPreloadedQuestions import pre_load_menu_service
 from QuestionShower import display_questions, practice_questions
 from QuestionAndAnswerAdder import setup_questions
 
@@ -11,8 +12,6 @@ def menu_options():
     print("Display Questions - If you would like to display stored questions select: 2")
     print("Exit - If you would like to exit the program select: 3")
     menu_selection()
-    # 1 input questions and answers
-    # 2 take a test
 
 
 def menu_selection():
@@ -25,10 +24,13 @@ def menu_selection():
         display_questions()
     elif user_choice == "3":
         print("About to exit")
-        # menu_exit()
+        menu_exit()
     elif user_choice == "4":
         print("sus")
         setup_questions()
+    elif user_choice == "5":
+        print("Preloading questions")
+        pre_load_menu_service()
     else:
         print("Invalid input")
         menu_options()
