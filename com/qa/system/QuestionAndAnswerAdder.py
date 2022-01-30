@@ -1,6 +1,6 @@
 # Adds questions
-from AvailableQuestionsAnswers import AvailableQuestionsAnswers
-from QuestionAndAnswerDB import store_user_input_questions
+from com.qa.system.AvailableQuestionsAnswers import AvailableQuestionsAnswers
+from com.qa.system.QuestionAndAnswerDB import store_user_input_questions
 
 question_num = 3  # this is temporary to be able to add more questions
 

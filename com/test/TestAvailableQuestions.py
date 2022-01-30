@@ -1,6 +1,6 @@
 import unittest
 # from menu import menu
-from AvailableQuestionsAnswers import AvailableQuestionsAnswers
+from com.qa.system.AvailableQuestionsAnswers import AvailableQuestionsAnswers
 
 
 class TestAvailableQuestions(unittest.TestCase):

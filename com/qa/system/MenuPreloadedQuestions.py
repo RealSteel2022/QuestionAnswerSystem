@@ -1,4 +1,4 @@
-from QuestionAndAnswerDB import pre_load_maths, pre_load_history
+from com.qa.system.QuestionAndAnswerDB import pre_load_maths, pre_load_history
 
 
 def pre_load_menu_service():

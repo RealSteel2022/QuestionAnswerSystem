@@ -1,4 +1,4 @@
-from AvailableQuestionsAnswers import AvailableQuestionsAnswers
+from com.qa.system.AvailableQuestionsAnswers import AvailableQuestionsAnswers
 
 question_list = []  # can easily be switched to a file/external database as this can just be replaced with a file
 

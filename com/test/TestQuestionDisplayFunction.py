@@ -1,6 +1,6 @@
 import unittest
 
-from QuestionShower import display_questions
+from com.qa.system.QuestionShower import display_questions
 
 
 class TestQuestionDisplayFunction(unittest.TestCase):

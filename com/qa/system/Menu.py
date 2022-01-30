@@ -1,7 +1,7 @@
-from MenuPreloadedQuestions import pre_load_menu_service
-from QuestionPracticer import practice_questions
-from QuestionShower import display_questions
-from QuestionAndAnswerAdder import setup_questions
+from com.qa.system.MenuPreloadedQuestions import pre_load_menu_service
+from com.qa.system.QuestionPracticer import practice_questions
+from com.qa.system.QuestionShower import display_questions
+from com.qa.system.QuestionAndAnswerAdder import setup_questions
 
 
 def menu_service():

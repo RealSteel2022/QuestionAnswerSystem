@@ -1,5 +1,5 @@
-from QuestionAndAnswerDB import get_questions_answers
-from ScoreService import scored_point, leaderboard_score
+from com.qa.system.QuestionAndAnswerDB import get_questions_answers
+from com.qa.system.ScoreService import scored_point, leaderboard_score
 
 
 def practice_questions():

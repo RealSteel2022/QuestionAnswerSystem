@@ -1,3 +1,3 @@
-from Menu import *
+from com.qa.system.Menu import *
 
 menu_service()

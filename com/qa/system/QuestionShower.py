@@ -1,5 +1,5 @@
 # show questions
-from QuestionAndAnswerDB import get_questions_answers
+from com.qa.system.QuestionAndAnswerDB import get_questions_answers
 
 
 def show_questions():
