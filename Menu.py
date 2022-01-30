@@ -1,5 +1,6 @@
 from MenuPreloadedQuestions import pre_load_menu_service
-from QuestionShower import display_questions, practice_questions
+from QuestionPracticer import practice_questions
+from QuestionShower import display_questions
 from QuestionAndAnswerAdder import setup_questions
 
 
@@ -8,9 +9,11 @@ def menu_service():
 
 
 def menu_options():
-    print("Test - If you would like to question test then select: 1")
-    print("Display Questions - If you would like to display stored questions select: 2")
-    print("Exit - If you would like to exit the program select: 3")
+    print("""\n-- Menu -- \n\nTest >>>>>> If you would like to question test then select: 1
+Display Questions >>>>>> If you would like to display stored questions select: 2
+Exit >>>>>> If you would like to exit the program select: 3
+Add Questions >>>>>> If you would like to add questions select: 4
+Pre-load >>>>>> If you would like to load pre-set questions select: \n""" )
     menu_selection()
 
 

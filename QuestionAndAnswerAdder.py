@@ -1,6 +1,6 @@
 # Adds questions
 from AvailableQuestionsAnswers import AvailableQuestionsAnswers
-from QuestionAndAnswerDB import store
+from QuestionAndAnswerDB import store_user_input_questions
 
 question_num = 3  # this is temporary to be able to add more questions
 
@@ -11,8 +11,6 @@ def question_value_incrementer():
     q = "q" + str(question_num)
     return q
 
-
-# use a dictionary?
 
 def add_question_answer():
     question_value_incrementer()
@@ -26,4 +24,4 @@ def add_question_answer():
 def setup_questions():
     # questions_list = []
     new_question_answer = add_question_answer()
-    store(new_question_answer)
+    store_user_input_questions(new_question_answer)
