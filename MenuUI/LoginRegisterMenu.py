@@ -1,7 +1,7 @@
 from tkinter import *
 
-# Background/window below
 
+# Background/window below
 
 def initial_menu():
     window1 = Tk()

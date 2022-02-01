@@ -13,7 +13,7 @@ def menu_options():
 Display Questions >>>>>> If you would like to display stored questions select: 2
 Exit >>>>>> If you would like to exit the program select: 3
 Add Questions >>>>>> If you would like to add questions select: 4
-Pre-load >>>>>> If you would like to load pre-set questions select: \n""" )
+Pre-load >>>>>> If you would like to load pre-set questions select: \n""")
     menu_selection()
 
 

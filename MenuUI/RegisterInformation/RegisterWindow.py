@@ -31,19 +31,18 @@ canvas.create_text(
     fill="#737373",
     font=("Spartan-Regular", int(24.0)))
 
-
-def user_btn_clicked():
-    print("Username entered")
-
+stored_username = StringVar()  # yes----------------------------------
+stored_password = StringVar()
 
 img0 = PhotoImage(file="C:/Users/green/IdeaProjects/QuestionAnswerSystem/MenuUI/RegisterInformation"
                        "/RegisterButton.png")
-user_info_b = Button(
+user_info_b = Entry(
     window,
-    image=img0,
+    bg="#fff1a5",
+    font=("Spartan-Regular", int(24.0)),
     borderwidth=0,
+    textvariable=stored_username,
     highlightthickness=0,
-    command=user_btn_clicked,
     relief="flat")
 
 user_info_b.place(
@@ -52,18 +51,15 @@ user_info_b.place(
     height=64)
 
 
-def pass_btn_clicked():
-    print("Password entered")
-
-
 img1 = PhotoImage(file="C:/Users/green/IdeaProjects/QuestionAnswerSystem/MenuUI/RegisterInformation"
                        "/PasswordButton.png")
-pass_info_b = Button(
+pass_info_b = Entry(
     window,
-    image=img1,
+    bg="#fff1a5",
+    font=("Spartan-Regular", int(24.0)),
     borderwidth=0,
+    textvariable=stored_password,
     highlightthickness=0,
-    command=pass_btn_clicked,
     relief="flat")
 
 pass_info_b.place(
@@ -73,7 +69,8 @@ pass_info_b.place(
 
 
 def accept_btn_clicked():
-    print("Input accepted")
+    print(stored_username.get())
+    print(stored_password.get())
 
 
 img2 = PhotoImage(file="C:/Users/green/IdeaProjects/QuestionAnswerSystem/MenuUI/RegisterInformation"
@@ -98,4 +95,4 @@ def register_window():
     window.mainloop()
 
 
-# register_window()
+register_window()
