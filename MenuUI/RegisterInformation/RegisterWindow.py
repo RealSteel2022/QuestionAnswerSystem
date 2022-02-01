@@ -1,5 +1,7 @@
 from tkinter import *
 
+# Forming the main background
+
 window = Toplevel()
 window.geometry("562x794")
 window.configure(bg="#ffffff")
@@ -31,8 +33,12 @@ canvas.create_text(
     fill="#737373",
     font=("Spartan-Regular", int(24.0)))
 
-stored_username = StringVar()  # yes----------------------------------
+# allows entry to take in data
+
+stored_username = StringVar()
 stored_password = StringVar()
+
+# user info button
 
 img0 = PhotoImage(file="C:/Users/green/IdeaProjects/QuestionAnswerSystem/MenuUI/RegisterInformation"
                        "/RegisterButton.png")
@@ -50,6 +56,7 @@ user_info_b.place(
     width=241,
     height=64)
 
+# password info button
 
 img1 = PhotoImage(file="C:/Users/green/IdeaProjects/QuestionAnswerSystem/MenuUI/RegisterInformation"
                        "/PasswordButton.png")
@@ -68,10 +75,31 @@ pass_info_b.place(
     height=64)
 
 
+# ================ TEMPORARILY DISABLED TO REMOVE CLUTTERING =============================
+# def storing_information():
+#     import hashlib
+#     print("Input accepted")
+#     username_info = stored_username.get()  # takes the username
+#     password_info = stored_password.get()  # takes the password
+#
+#     password_hashed = hashlib.md5(password_info.encode()).hexdigest()
+#     file = open(username_info + ".txt", "w")
+#     file.write(username_info + "\n")
+#     file.write(password_hashed)
+#     file.close()
+#
+#     user_info_b.delete(0, END)
+#     pass_info_b.delete(0, END)
+
+# tells the program what to do with accepted data
+
 def accept_btn_clicked():
     print(stored_username.get())
     print(stored_password.get())
+    # storing_information()
 
+
+# accepting button to tell the program to store the data
 
 img2 = PhotoImage(file="C:/Users/green/IdeaProjects/QuestionAnswerSystem/MenuUI/RegisterInformation"
                        "/AcceptInput.png")
@@ -91,8 +119,10 @@ accept_b.place(
 window.resizable(False, False)
 
 
+# runs the window
+
 def register_window():
     window.mainloop()
 
 
-register_window()
+# register_window() only uncomment if testing in isolation
