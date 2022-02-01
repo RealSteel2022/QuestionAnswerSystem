@@ -1,5 +1,4 @@
 from tkinter import *  # importing tkinter
-import time
 import hashlib
 
 
