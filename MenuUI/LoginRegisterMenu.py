@@ -18,7 +18,7 @@ def initial_menu():
         relief="ridge")
     canvas.place(x=0, y=0)
 
-    background_img = PhotoImage(file=f"background.png")
+    background_img = PhotoImage(file="background.png")
     background = canvas.create_image(
         569.5, 397.0,
         image=background_img)
@@ -30,7 +30,7 @@ def initial_menu():
         from MenuUI.RegisterInformation.RegisterWindow import register_window
         register_window()
 
-    img0 = PhotoImage(file=f"img0.png")
+    img0 = PhotoImage(file="img0.png")
     register_b = Button(
         image=img0,
         borderwidth=0,
@@ -48,7 +48,7 @@ def initial_menu():
     def login_btn_clicked():
         print("Login Clicked")
 
-    img1 = PhotoImage(file=f"img1.png")
+    img1 = PhotoImage(file="img1.png")
     login_b = Button(
         image=img1,
         borderwidth=0,

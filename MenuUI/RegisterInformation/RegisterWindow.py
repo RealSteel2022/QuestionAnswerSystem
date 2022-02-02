@@ -65,6 +65,7 @@ pass_info_b = Entry(
     bg="#fff1a5",
     font=("Spartan-Regular", int(24.0)),
     borderwidth=0,
+    show="*",
     textvariable=stored_password,
     highlightthickness=0,
     relief="flat")
@@ -76,27 +77,28 @@ pass_info_b.place(
 
 
 # ================ TEMPORARILY DISABLED TO REMOVE CLUTTERING =============================
-# def storing_information():
-#     import hashlib
-#     print("Input accepted")
-#     username_info = stored_username.get()  # takes the username
-#     password_info = stored_password.get()  # takes the password
-#
-#     password_hashed = hashlib.md5(password_info.encode()).hexdigest()
-#     file = open(username_info + ".txt", "w")
-#     file.write(username_info + "\n")
-#     file.write(password_hashed)
-#     file.close()
-#
-#     user_info_b.delete(0, END)
-#     pass_info_b.delete(0, END)
+def storing_information():
+    import hashlib
+    print("Input accepted")
+    username_info = stored_username.get()  # takes the username
+    password_info = stored_password.get()  # takes the password
+
+    password_hashed = hashlib.md5(password_info.encode()).hexdigest()
+    file = open(username_info + ".txt", "w")
+    file.write(username_info + "\n")
+    file.write(password_hashed)
+    file.close()
+
+    user_info_b.delete(0, END)
+    pass_info_b.delete(0, END)
+
 
 # tells the program what to do with accepted data
 
 def accept_btn_clicked():
     print(stored_username.get())
     print(stored_password.get())
-    # storing_information()
+    storing_information()
 
 
 # accepting button to tell the program to store the data
@@ -124,5 +126,4 @@ window.resizable(False, False)
 def register_window():
     window.mainloop()
 
-
-# register_window() only uncomment if testing in isolation
+register_window() #only uncomment if testing in isolation
