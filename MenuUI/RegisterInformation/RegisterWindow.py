@@ -96,8 +96,7 @@ def storing_information():
 # tells the program what to do with accepted data
 
 def accept_btn_clicked():
-    print(stored_username.get())
-    print(stored_password.get())
+    window.destroy()
     storing_information()
 
 
@@ -126,4 +125,4 @@ window.resizable(False, False)
 def register_window():
     window.mainloop()
 
-register_window() #only uncomment if testing in isolation
+# register_window() #only uncomment if testing in isolation

@@ -1,11 +1,13 @@
 from tkinter import *
 
+username_info = ""
+
 
 # ================ ALLOW USER TO LOG IN =============================
 
-
 def login_validation():
     import hashlib
+    global username_info
     username_info = attempt_username.get()  # takes the username
     password_info = attempt_password.get()  # takes the password
 
@@ -13,21 +15,28 @@ def login_validation():
     file = open(username_info + ".txt", "r")
     lines = file.readlines()
     if password_hashed == lines[1]:
-        print("Login Accepted")
+        file = open("current_user.txt", "w")
+        file.write(username_info)
+        file.close()
+        print(username_info)
         window1.destroy()
         from MenuUI.MenuSelectionUI.MenuSelectionWindow import menu_select_option_window
     else:
         print("Incorrect Password")
+        # need a display user incorrect password service
     file.close()
 
     username_entry_button.delete(0, END)
     password_entry_button.delete(0, END)
 
 
+def greet_user():
+    return username_info
+
+
 # tells the register button what it does
 
 def register_btn_clicked():
-    print("Register Clicked")
     from MenuUI.RegisterInformation.RegisterWindow import register_window
     register_window()
 

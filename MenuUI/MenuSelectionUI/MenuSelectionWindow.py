@@ -2,6 +2,13 @@ from tkinter import *
 
 
 def menu_select_option_window():
+    # this takes the name from current user to be displayed back to them later on
+    name = open("current_user.txt", "r")
+    lines = name.readlines()
+    print(lines[0])
+
+    # defines what each button can do
+
     def question_test_button():
         print("Questions testing clicked")
         # Question testing service
@@ -108,7 +115,7 @@ def menu_select_option_window():
 
     canvas.create_text(
         569.5, 270.0,
-        text="Hello amongus, lets get",
+        text="Hello " + lines[0] + ", lets get",
         fill="#737373",
         font=("Eczar-SemiBold", int(27.0)))
 
