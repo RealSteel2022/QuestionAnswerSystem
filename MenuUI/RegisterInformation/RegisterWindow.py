@@ -125,4 +125,5 @@ window.resizable(False, False)
 def register_window():
     window.mainloop()
 
-# register_window() #only uncomment if testing in isolation
+
+register_window()  # only uncomment if testing in isolation

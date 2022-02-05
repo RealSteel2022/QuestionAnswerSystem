@@ -20,7 +20,7 @@ def login_validation():
         file.close()
         print(username_info)
         window1.destroy()
-        from MenuUI.MenuSelectionUI.MenuSelectionWindow import menu_select_option_window
+        from MenuSelectionUI.MenuSelectionWindow import menu_select_option_window
     else:
         print("Incorrect Password")
         # need a display user incorrect password service
@@ -37,7 +37,7 @@ def greet_user():
 # tells the register button what it does
 
 def register_btn_clicked():
-    from MenuUI.RegisterInformation.RegisterWindow import register_window
+    from RegisterInformation.RegisterWindow import register_window
     register_window()
 
 
