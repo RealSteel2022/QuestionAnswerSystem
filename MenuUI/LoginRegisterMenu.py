@@ -2,16 +2,20 @@ from tkinter import *
 
 
 # ================ ALLOW USER TO LOG IN =============================
+
+
 def login_validation():
     import hashlib
     username_info = attempt_username.get()  # takes the username
     password_info = attempt_password.get()  # takes the password
 
-    password_hashed = hashlib.md5(password_info.encode()).hexdigest()
+    password_hashed = hashlib.md5(password_info.encode()).hexdigest()  # compares hash value to stored data
     file = open(username_info + ".txt", "r")
     lines = file.readlines()
     if password_hashed == lines[1]:
         print("Login Accepted")
+        window1.destroy()
+        from MenuUI.MenuSelectionUI.MenuSelectionWindow import menu_select_option_window
     else:
         print("Incorrect Password")
     file.close()
@@ -19,6 +23,8 @@ def login_validation():
     username_entry_button.delete(0, END)
     password_entry_button.delete(0, END)
 
+
+# tells the register button what it does
 
 def register_btn_clicked():
     print("Register Clicked")
