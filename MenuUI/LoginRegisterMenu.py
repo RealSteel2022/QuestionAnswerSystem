@@ -1,8 +1,23 @@
 from tkinter import *
 
 
-def btn_clicked():
-    print("Enter Clicked")
+# ================ ALLOW USER TO LOG IN =============================
+def login_validation():
+    import hashlib
+    username_info = attempt_username.get()  # takes the username
+    password_info = attempt_password.get()  # takes the password
+
+    password_hashed = hashlib.md5(password_info.encode()).hexdigest()
+    file = open(username_info + ".txt", "r")
+    lines = file.readlines()
+    if password_hashed == lines[1]:
+        print("Login Accepted")
+    else:
+        print("Incorrect Password")
+    file.close()
+
+    username_entry_button.delete(0, END)
+    password_entry_button.delete(0, END)
 
 
 def register_btn_clicked():
@@ -44,7 +59,7 @@ sendDetails_button = Button(
     image=sendDetails,
     borderwidth=0,
     highlightthickness=0,
-    command=btn_clicked,
+    command=login_validation,
     relief="flat")
 
 sendDetails_button.place(
