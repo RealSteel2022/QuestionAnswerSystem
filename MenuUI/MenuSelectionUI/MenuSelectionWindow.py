@@ -1,6 +1,11 @@
 import os
 from tkinter import *
 
+from com.qa.system.MenuPreloadedQuestions import pre_load_menu_service
+from com.qa.system.QuestionPracticer import practice_questions
+
+directory_path = str(os.getcwd()) + "\MenuUI\MenuSelectionUI\\"
+
 
 def menu_select_option_window():
     # this takes the name from current user to be displayed back to them later on
@@ -12,6 +17,9 @@ def menu_select_option_window():
 
     def question_test_button():
         print("Questions testing clicked")
+        menu_select_ui.destroy()
+        from MenuUI.QuestionPractice.QuestionUI import practice_questions_window
+        # practice_questions()
         # Question testing service
 
     def scoreboard_button():
@@ -24,6 +32,7 @@ def menu_select_option_window():
 
     def pre_load_questions_button():
         print("Pre-load questions clicked")
+        pre_load_menu_service()
         # Pre-load question service
 
     # creates window
@@ -42,14 +51,14 @@ def menu_select_option_window():
         relief="ridge")
     canvas.place(x=0, y=0)
 
-    background_img = PhotoImage(file=str(os.getcwd()) + "\MenuSelectionUI\\background.png")
+    background_img = PhotoImage(file=directory_path + "background.png")
     background = canvas.create_image(
         569.5, 397.0,
         image=background_img)
 
     # pre-loads questions
 
-    pre_load = PhotoImage(file=str(os.getcwd()) + "\MenuSelectionUI\img0.png")
+    pre_load = PhotoImage(file=directory_path + "img0.png")
     pre_load_b = Button(
         image=pre_load,
         borderwidth=0,
@@ -64,7 +73,7 @@ def menu_select_option_window():
 
     # loads scoreboard
 
-    scoreboard = PhotoImage(file=str(os.getcwd()) + "\MenuSelectionUI\img1.png")
+    scoreboard = PhotoImage(file=directory_path + "img1.png")
     scoreboard_b = Button(
         image=scoreboard,
         borderwidth=0,
@@ -79,7 +88,7 @@ def menu_select_option_window():
 
     # edits questions button
 
-    edit_questions = PhotoImage(file=str(os.getcwd()) + "\MenuSelectionUI\img2.png")
+    edit_questions = PhotoImage(file=directory_path + "img2.png")
     edit_questions_b = Button(
         image=edit_questions,
         borderwidth=0,
@@ -94,7 +103,7 @@ def menu_select_option_window():
 
     # question testing button
 
-    question_test = PhotoImage(file=str(os.getcwd()) + "\MenuSelectionUI\img3.png")
+    question_test = PhotoImage(file=directory_path + "img3.png")
     question_test_b = Button(
         image=question_test,
         borderwidth=0,

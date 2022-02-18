@@ -1,21 +1,9 @@
+import os
 from tkinter import *
 
 from MenuUI.ValidationCode import login_validation
 
 username_info = ""
-
-
-def clear_entry():
-    username_entry_button.delete(0, END)
-    password_entry_button.delete(0, END)
-
-
-def send_details_clicked():
-    login_validation(attempt_username.get(), attempt_password.get())
-    clear_entry()
-    if login_validation:
-        window1.destroy()
-        from MenuSelectionUI.MenuSelectionWindow import menu_select_option_window
 
 
 def greet_user():
@@ -25,8 +13,21 @@ def greet_user():
 # tells the register button what it does
 
 def register_btn_clicked():
-    from RegisterInformation.RegisterWindow import register_window
+    from MenuUI.RegisterInformation.RegisterWindow import register_window
     register_window()
+
+
+def send_details_clicked():
+    login_validation(attempt_username.get(), attempt_password.get())
+    clear_entry()
+    if login_validation:
+        window1.destroy()
+        from MenuUI.MenuSelectionUI.MenuSelectionWindow import menu_select_option_window
+
+
+def clear_entry():
+    username_entry_button.delete(0, END)
+    password_entry_button.delete(0, END)
 
 
 # initial menu
@@ -45,7 +46,7 @@ canvas = Canvas(
     relief="ridge")
 canvas.place(x=0, y=0)
 
-background_img = PhotoImage(file=f"background.png")
+background_img = PhotoImage(file=str(os.getcwd()) + "\MenuUI\\background.png")
 background = canvas.create_image(
     569.5, 397.0,
     image=background_img)
@@ -57,7 +58,7 @@ attempt_password = StringVar()
 
 # user details entry button
 
-sendDetails = PhotoImage(file=f"img0.png")
+sendDetails = PhotoImage(file=str(os.getcwd()) + "\MenuUI\img0.png")
 sendDetails_button = Button(
     image=sendDetails,
     borderwidth=0,
@@ -72,7 +73,7 @@ sendDetails_button.place(
 
 # open register button
 
-img1 = PhotoImage(file=f"img1.png")
+img1 = PhotoImage(file=str(os.getcwd()) + "\MenuUI\img1.png")
 b1 = Button(
     image=img1,
     borderwidth=0,
@@ -92,7 +93,7 @@ canvas.create_text(
     font=("Spartan-Regular", int(24.0)))
 
 # username entry
-username_entry = PhotoImage(file="img2.png")
+username_entry = PhotoImage(file=str(os.getcwd()) + "\MenuUI\img2.png")
 
 username_entry_button = Entry(
     bg="#fff1a5",
@@ -109,7 +110,7 @@ username_entry_button.place(
 
 # password entry
 
-password_entry = PhotoImage(file=f"img3.png")
+password_entry = PhotoImage(file=str(os.getcwd()) + "\MenuUI\img3.png")
 password_entry_button = Entry(
     bg="#fff1a5",
     font=("Spartan-Regular", int(24.0)),
@@ -131,4 +132,7 @@ canvas.create_text(
     font=("Spartan-Regular", int(24.0)))
 
 window1.resizable(False, False)
-window1.mainloop()
+
+
+def login_register_menu():
+    window1.mainloop()

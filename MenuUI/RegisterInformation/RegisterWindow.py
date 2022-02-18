@@ -1,6 +1,8 @@
 import os
 from tkinter import *
 
+directory_path = str(os.getcwd()) + "\MenuUI\RegisterInformation\\"
+
 # Forming the main background
 from MenuUI.RegisterInformation.LoginDetailsOntoFile import storing_information
 
@@ -17,7 +19,7 @@ canvas = Canvas(
     relief="ridge")
 canvas.place(x=0, y=0)
 
-background_img = PhotoImage(file=str(os.getcwd()) + "\RegisterInformation\RegisterBackground.png")
+background_img = PhotoImage(file=directory_path + "RegisterBackground.png")
 background = canvas.create_image(
     281.0, 397.0,
     image=background_img)
@@ -41,7 +43,7 @@ stored_password = StringVar()
 
 # user info button
 
-img0 = PhotoImage(file=str(os.getcwd()) + "\RegisterInformation\RegisterButton.png")
+img0 = PhotoImage(file=directory_path + "RegisterButton.png")
 user_info_b = Entry(
     window,
     bg="#fff1a5",
@@ -58,7 +60,7 @@ user_info_b.place(
 
 # password info button
 
-img1 = PhotoImage(file=str(os.getcwd()) + "\RegisterInformation\PasswordButton.png")
+img1 = PhotoImage(file=directory_path + "PasswordButton.png")
 pass_info_b = Entry(
     window,
     bg="#fff1a5",
@@ -90,7 +92,7 @@ def accept_btn_clicked():
 
 # accepting button to tell the program to store the data
 
-img2 = PhotoImage(file=str(os.getcwd()) + "\RegisterInformation\AcceptInput.png")
+img2 = PhotoImage(file=directory_path + "AcceptInput.png")
 accept_b = Button(
     window,
     image=img2,

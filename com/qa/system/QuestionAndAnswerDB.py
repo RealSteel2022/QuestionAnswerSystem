@@ -1,6 +1,7 @@
 from com.qa.system.AvailableQuestionsAnswers import AvailableQuestionsAnswers
 
-question_list = []  # can easily be switched to a file/external database as this can just be replaced with a file
+question_list = []  # can easily be switched to a file/external database as this can
+# just be replaced with a file
 
 
 def store_user_input_questions(q_a):
@@ -10,6 +11,7 @@ def store_user_input_questions(q_a):
 
 def get_questions_answers():
     # print("get function " + str(question_list))
+    pre_load_history() # remove this once done
     return question_list
 
 
