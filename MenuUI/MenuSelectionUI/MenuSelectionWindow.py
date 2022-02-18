@@ -1,3 +1,4 @@
+import os
 from tkinter import *
 
 
@@ -41,16 +42,14 @@ def menu_select_option_window():
         relief="ridge")
     canvas.place(x=0, y=0)
 
-    background_img = PhotoImage(file="C:/Users/green/IdeaProjects/QuestionAnswerSystem/MenuUI/MenuSelectionUI/"
-                                     "background.png")
+    background_img = PhotoImage(file=str(os.getcwd()) + "\MenuSelectionUI\\background.png")
     background = canvas.create_image(
         569.5, 397.0,
         image=background_img)
 
     # pre-loads questions
 
-    pre_load = PhotoImage(file="C:/Users/green/IdeaProjects/QuestionAnswerSystem/MenuUI/MenuSelectionUI/"
-                               "img0.png")
+    pre_load = PhotoImage(file=str(os.getcwd()) + "\MenuSelectionUI\img0.png")
     pre_load_b = Button(
         image=pre_load,
         borderwidth=0,
@@ -65,8 +64,7 @@ def menu_select_option_window():
 
     # loads scoreboard
 
-    scoreboard = PhotoImage(file="C:/Users/green/IdeaProjects/QuestionAnswerSystem/MenuUI/MenuSelectionUI/"
-                                 "img1.png")
+    scoreboard = PhotoImage(file=str(os.getcwd()) + "\MenuSelectionUI\img1.png")
     scoreboard_b = Button(
         image=scoreboard,
         borderwidth=0,
@@ -81,8 +79,7 @@ def menu_select_option_window():
 
     # edits questions button
 
-    edit_questions = PhotoImage(file="C:/Users/green/IdeaProjects/QuestionAnswerSystem/MenuUI/MenuSelectionUI/"
-                                     "img2.png")
+    edit_questions = PhotoImage(file=str(os.getcwd()) + "\MenuSelectionUI\img2.png")
     edit_questions_b = Button(
         image=edit_questions,
         borderwidth=0,
@@ -97,8 +94,7 @@ def menu_select_option_window():
 
     # question testing button
 
-    question_test = PhotoImage(file="C:/Users/green/IdeaProjects/QuestionAnswerSystem/MenuUI/MenuSelectionUI/"
-                                    "img3.png")
+    question_test = PhotoImage(file=str(os.getcwd()) + "\MenuSelectionUI\img3.png")
     question_test_b = Button(
         image=question_test,
         borderwidth=0,

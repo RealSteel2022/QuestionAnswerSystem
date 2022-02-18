@@ -1,6 +1,8 @@
+import os
 from tkinter import *
 
 # Forming the main background
+from MenuUI.RegisterInformation.LoginDetailsOntoFile import storing_information
 
 window = Toplevel()
 window.geometry("562x794")
@@ -15,8 +17,7 @@ canvas = Canvas(
     relief="ridge")
 canvas.place(x=0, y=0)
 
-background_img = PhotoImage(file="C:/Users/green/IdeaProjects/QuestionAnswerSystem/MenuUI/RegisterInformation"
-                                 "/RegisterBackground.png")
+background_img = PhotoImage(file=str(os.getcwd()) + "\RegisterInformation\RegisterBackground.png")
 background = canvas.create_image(
     281.0, 397.0,
     image=background_img)
@@ -40,8 +41,7 @@ stored_password = StringVar()
 
 # user info button
 
-img0 = PhotoImage(file="C:/Users/green/IdeaProjects/QuestionAnswerSystem/MenuUI/RegisterInformation"
-                       "/RegisterButton.png")
+img0 = PhotoImage(file=str(os.getcwd()) + "\RegisterInformation\RegisterButton.png")
 user_info_b = Entry(
     window,
     bg="#fff1a5",
@@ -58,8 +58,7 @@ user_info_b.place(
 
 # password info button
 
-img1 = PhotoImage(file="C:/Users/green/IdeaProjects/QuestionAnswerSystem/MenuUI/RegisterInformation"
-                       "/PasswordButton.png")
+img1 = PhotoImage(file=str(os.getcwd()) + "\RegisterInformation\PasswordButton.png")
 pass_info_b = Entry(
     window,
     bg="#fff1a5",
@@ -76,34 +75,22 @@ pass_info_b.place(
     height=64)
 
 
-# ================ TEMPORARILY DISABLED TO REMOVE CLUTTERING =============================
-def storing_information():
-    import hashlib
-    print("Input accepted")
-    username_info = stored_username.get()  # takes the username
-    password_info = stored_password.get()  # takes the password
+# tells the program what to do with accepted data
 
-    password_hashed = hashlib.md5(password_info.encode()).hexdigest()
-    file = open(username_info + ".txt", "w")
-    file.write(username_info + "\n")
-    file.write(password_hashed)
-    file.close()
-
+def clear_entry():
     user_info_b.delete(0, END)
     pass_info_b.delete(0, END)
 
 
-# tells the program what to do with accepted data
-
 def accept_btn_clicked():
     window.destroy()
-    storing_information()
+    storing_information(stored_username.get(), stored_password.get())
+    clear_entry()
 
 
 # accepting button to tell the program to store the data
 
-img2 = PhotoImage(file="C:/Users/green/IdeaProjects/QuestionAnswerSystem/MenuUI/RegisterInformation"
-                       "/AcceptInput.png")
+img2 = PhotoImage(file=str(os.getcwd()) + "\RegisterInformation\AcceptInput.png")
 accept_b = Button(
     window,
     image=img2,
