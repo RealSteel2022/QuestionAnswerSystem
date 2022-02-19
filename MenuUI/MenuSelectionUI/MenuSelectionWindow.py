@@ -35,7 +35,7 @@ def menu_select_option_window():
         pre_load_menu_service()
         # Pre-load question service
 
-    # creates window
+    # =============== background window set up ===============
 
     menu_select_ui = Tk()
 
@@ -56,7 +56,7 @@ def menu_select_option_window():
         569.5, 397.0,
         image=background_img)
 
-    # pre-loads questions
+    # ========= pre-loads questions button setup =========
 
     pre_load = PhotoImage(file=directory_path + "img0.png")
     pre_load_b = Button(
@@ -71,7 +71,7 @@ def menu_select_option_window():
         width=133,
         height=133)
 
-    # loads scoreboard
+    # ========= loads scoreboard button setup =========
 
     scoreboard = PhotoImage(file=directory_path + "img1.png")
     scoreboard_b = Button(
@@ -86,7 +86,7 @@ def menu_select_option_window():
         width=135,
         height=133)
 
-    # edits questions button
+    # ========= edits questions button setup =========
 
     edit_questions = PhotoImage(file=directory_path + "img2.png")
     edit_questions_b = Button(
@@ -101,7 +101,7 @@ def menu_select_option_window():
         width=130,
         height=131)
 
-    # question testing button
+    # ========= question testing button setup =========
 
     question_test = PhotoImage(file=directory_path + "img3.png")
     question_test_b = Button(
@@ -116,7 +116,7 @@ def menu_select_option_window():
         width=128,
         height=130)
 
-    # text on top of menu
+    # ========= text on top of menu =========
 
     canvas.create_text(
         569.5, 270.0,

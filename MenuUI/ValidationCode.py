@@ -11,5 +11,6 @@ def login_validation(username_info, password_info):
         return True
     else:
         print("Incorrect Password")
+        file.close()
+        return False
         # need a display user incorrect password service
-    file.close()

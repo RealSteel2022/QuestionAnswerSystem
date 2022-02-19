@@ -3,6 +3,8 @@ from tkinter import *
 
 from com.qa.system.QuestionPracticer import practice_questions
 
+directory_path = str(os.getcwd()) + "\MenuUI\QuestionPractice\\"
+
 
 def btn_clicked():
     print("Button Clicked")
@@ -22,12 +24,12 @@ canvas = Canvas(
     relief="ridge")
 canvas.place(x=0, y=0)
 
-background_img = PhotoImage(file=str(os.getcwd()) + "\QuestionPractice\\background.png")
+background_img = PhotoImage(file=directory_path + "background.png")
 background = canvas.create_image(
     569.5, 397.0,
     image=background_img)
 
-img0 = PhotoImage(file=str(os.getcwd()) + "\QuestionPractice\img0.png")
+img0 = PhotoImage(file=directory_path + "img0.png")
 b0 = Button(
     image=img0,
     borderwidth=0,
@@ -48,8 +50,6 @@ canvas.create_text(
 
 window.resizable(False, False)
 
-
-# canvas.configure(text=str(practice_questions()) # this needs to be done the way I did it before with it taking place within the practice questions function
 
 def practice_questions_window():
     window.mainloop()

@@ -5,6 +5,8 @@ from MenuUI.ValidationCode import login_validation
 
 username_info = ""
 
+validation_pass = False
+
 
 def greet_user():
     return username_info
@@ -18,11 +20,10 @@ def register_btn_clicked():
 
 
 def send_details_clicked():
-    login_validation(attempt_username.get(), attempt_password.get())
-    clear_entry()
-    if login_validation:
+    global validation_pass
+    if login_validation(attempt_username.get(), attempt_password.get()):
         window1.destroy()
-        from MenuUI.MenuSelectionUI.MenuSelectionWindow import menu_select_option_window
+        validation_pass = True
 
 
 def clear_entry():
@@ -134,5 +135,6 @@ canvas.create_text(
 window1.resizable(False, False)
 
 
-def login_register_menu():
+def login_register_ui():
     window1.mainloop()
+    return validation_pass
