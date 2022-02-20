@@ -18,8 +18,8 @@ def menu_select_option_window():
     def question_test_button():
         print("Questions testing clicked")
         menu_select_ui.destroy()
-        from MenuUI.QuestionPractice.QuestionUI import practice_questions_window
-        # practice_questions()
+        # from MenuUI.QuestionPractice.QuestionUI import practice_questions_window
+        practice_questions()
         # Question testing service
 
     def scoreboard_button():
@@ -116,7 +116,7 @@ def menu_select_option_window():
         width=128,
         height=130)
 
-    # ========= text on top of menu =========
+    # ========= title on top of menu =========
 
     canvas.create_text(
         569.5, 270.0,
