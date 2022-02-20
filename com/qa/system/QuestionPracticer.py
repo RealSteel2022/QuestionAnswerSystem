@@ -22,11 +22,10 @@ def calling_practice_window():
 
 
 def practice_questions():
-    import MenuUI.QuestionPractice.QuestionUI
     for questions_answer in get_questions_answers():
         ui_question_display = questions_answer.display_question()
         print(ui_question_display)
-
+        import MenuUI.QuestionPractice.QuestionUI
         MenuUI.QuestionPractice.QuestionUI.practice_questions_window(ui_question_display)
         # calling_practice_window()
         # from MenuUI.QuestionPractice.QuestionUI import practice_questions_window
