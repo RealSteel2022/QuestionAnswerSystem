@@ -5,9 +5,8 @@ directory_path = str(os.getcwd()) + "\MenuUI\QuestionPractice\\"
 
 window = Tk()
 user = "my man"
-user1 = "okay"
+user1 = ["SUSSY BAKA", "aMONG US", "Qyes"]
 my_label1 = ""
-
 
 # def practice_questions_window(username):
 #     # window.mainloop()
@@ -16,11 +15,16 @@ my_label1 = ""
 #     user = username
 #     question_update()
 
+current_quest = 0
+
 
 def question_update():
     # This proves that if you have the list you can loop through teh qus here adn update with each button click
-    # my_label1.config(text=user1)
-    window.destroy()
+    global current_quest
+    # print(user1[current_quest])
+    my_label1.config(text=user1[current_quest])
+    current_quest += 1
+    # window.destroy()
 
 
 def btn_clicked():
