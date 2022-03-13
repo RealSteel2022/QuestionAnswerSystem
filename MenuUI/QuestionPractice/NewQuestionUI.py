@@ -7,7 +7,7 @@ window = Tk()
 
 stored_answer = StringVar()
 user = "my man"
-user1 = ["How many wives did Henry VIII have?", "How many members on the privy council", "Qyes"]
+user1 = ["hello", "okay"]
 my_label1 = ""
 
 current_quest = 0
