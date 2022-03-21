@@ -6,7 +6,7 @@ class AvailableQuestionsAnswers:
     def display_question(self):
         return self.question
 
-    def show_answers(self):
+    def show_answer(self):
         return self.answer
 
 # def setup_questions():

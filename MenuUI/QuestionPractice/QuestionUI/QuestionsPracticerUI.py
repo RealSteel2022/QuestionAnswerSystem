@@ -2,12 +2,11 @@ import os
 from tkinter import *
 from com.qa.system.QuestionAndAnswerDB import get_questions_answers
 
-directory_path = str(os.getcwd()) + "\MenuUI\QuestionPractice\QuestionUI\\"
 
+directory_path = str(os.getcwd()) + "\MenuUI\QuestionPractice\QuestionUI\\"
+value1 = get_questions_answers()
 user = "my man"
-questions_answer = get_questions_answers()
 my_label1 = ""
-# username = ""
 
 current_quest = 0
 
@@ -105,15 +104,14 @@ class QuestionsUI(Tk):
         self.answer_entry.delete(0, END)
 
     def question_update(self):
-        # This proves that if you have the list you can loop through teh qus here adn update with each button click
         global current_quest
-        print("the list item is " + str(len(questions_answer)))
-        question = questions_answer[current_quest]
-        print(question.display_question)
-        self.my_label1.config(text=questions_answer.index(current_quest))
+
+        value = value1[current_quest]
+        print(str(len(get_questions_answers())) + " from the question upate function" + value.display_question() +
+              " " + value.show_answer())
+        # need to find out why len keepin incresing by 3 more each time.
+        print(value.display_question())
+        self.my_label1.config(text=value.display_question())
         current_quest += 1
         self.clear_entry()
 
-# window = Tk()
-#
-# window.mainloop()
