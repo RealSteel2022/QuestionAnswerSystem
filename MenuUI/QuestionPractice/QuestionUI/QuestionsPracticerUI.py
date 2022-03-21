@@ -1,17 +1,18 @@
 import os
 from tkinter import *
 from com.qa.system.QuestionAndAnswerDB import get_questions_answers
+import time
 
-
-directory_path = str(os.getcwd()) + "\MenuUI\QuestionPractice\QuestionUI\\"
 value1 = get_questions_answers()
-user = "my man"
+directory_path = str(os.getcwd()) + "\MenuUI\QuestionPractice\QuestionUI\\"
+user = "Click enter to begin"
 my_label1 = ""
 
 current_quest = 0
 
 
 def kick_off_questions_ui():
+    # get_questions_answers() # sets up questions
     app = QuestionsUI()
     app.mainloop()
 
@@ -19,7 +20,7 @@ def kick_off_questions_ui():
 class QuestionsUI(Tk):
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
-        stored_answer = StringVar()
+        self.stored_answer = StringVar()
         # self.username = username
         self.user = user
         self.geometry("1139x794")
@@ -58,7 +59,7 @@ class QuestionsUI(Tk):
             bg="#58bbc2",
             font=("Spartan-Regular", int(24.0)),
             borderwidth=0,
-            textvariable=stored_answer,
+            textvariable=self.stored_answer,
             highlightthickness=0,
             relief="flat")
 
@@ -89,7 +90,6 @@ class QuestionsUI(Tk):
             font=("Eczar-SemiBold", int(24.0)))
         self.my_label1.place(x=319.5, y=286.5)
         self.resizable(False, False)
-        self.my_label1.config(text=self.user)
 
         self.resizable(False, False)
 
@@ -107,11 +107,13 @@ class QuestionsUI(Tk):
         global current_quest
 
         value = value1[current_quest]
-        print(str(len(get_questions_answers())) + " from the question upate function" + value.display_question() +
-              " " + value.show_answer())
-        # need to find out why len keepin incresing by 3 more each time.
-        print(value.display_question())
+        answer_value = value1[current_quest-1]
         self.my_label1.config(text=value.display_question())
+        print(value.display_question() + " " + answer_value.show_answer())
+        if self.stored_answer.get() == answer_value.show_answer():
+            print("Correct")
+        else:
+            print(self.stored_answer.get())
+            print(answer_value.show_answer())
         current_quest += 1
         self.clear_entry()
-

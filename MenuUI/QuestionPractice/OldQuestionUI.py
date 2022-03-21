@@ -21,12 +21,12 @@ def practice_questions_window(username):
     def clear_entry():
         answer_entry.delete(0, END)
 
-    def question_update():
-        # This proves that if you have the list you can loop through teh qus here adn update with each button click
-        global current_quest
-        my_label1.config(text=user1[current_quest])
-        current_quest += 1
-        clear_entry()
+    # def question_update():
+    #     # This proves that if you have the list you can loop through teh qus here adn update with each button click
+    #     global current_quest
+    #     my_label1.config(text=user1[current_quest])
+    #     current_quest += 1
+    #     clear_entry()
 
     window.geometry("1139x794")
     window.configure(bg="#ffffff")
