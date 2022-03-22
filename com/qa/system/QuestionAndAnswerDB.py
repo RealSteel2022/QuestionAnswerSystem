@@ -11,7 +11,7 @@ def store_user_input_questions(q_a):
 
 def get_questions_answers():
     # print("get function " + str(question_list))
-    pre_load_history() # remove this once done
+    pre_load_maths() # remove this once done
     return question_and_answers_list
 
 
@@ -31,9 +31,11 @@ def pre_load_maths():
     q1 = AvailableQuestionsAnswers("What is the derivative", "23")
     q2 = AvailableQuestionsAnswers("What is pi 4 d.p.", "3.1426")
     q3 = AvailableQuestionsAnswers("What is sum of squares", "E")
+    q4 = AvailableQuestionsAnswers("End of Set", "Finished")
 
     question_and_answers_list.append(q1)
     question_and_answers_list.append(q2)
     question_and_answers_list.append(q3)
+    question_and_answers_list.append(q4)
 
     return question_and_answers_list
