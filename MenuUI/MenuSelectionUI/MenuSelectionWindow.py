@@ -4,7 +4,7 @@ from tkinter import *
 from com.qa.system.MenuPreloadedQuestions import pre_load_menu_service
 # from com.qa.system.QuestionPracticer import practice_questions
 
-import MenuUI.QuestionPractice.QuestionUI.QuestionsPracticerUI
+import MenuUI.QuestionPractice.QuestionsPracticerUI
 
 directory_path = str(os.getcwd()) + "\MenuUI\MenuSelectionUI\\"
 
@@ -21,7 +21,7 @@ def menu_select_option_window():
         print("Questions testing clicked")
         menu_select_ui.destroy()
         # from MenuUI.QuestionPractice.QuestionUI import practice_questions_window
-        MenuUI.QuestionPractice.QuestionUI.QuestionsPracticerUI.kick_off_questions_ui()
+        MenuUI.QuestionPractice.QuestionsPracticerUI.kick_off_questions_ui()
         # practice_questions()
         # Question testing service
 

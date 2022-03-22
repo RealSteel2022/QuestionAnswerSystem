@@ -3,7 +3,7 @@ from tkinter import *
 from com.qa.system.QuestionAndAnswerDB import get_questions_answers
 
 value1 = get_questions_answers()
-directory_path = str(os.getcwd()) + "\MenuUI\QuestionPractice\QuestionUI\\"
+directory_path = str(os.getcwd()) + "\MenuUI\QuestionPractice\\"
 user = "Click enter to begin"
 my_label1 = ""
 
@@ -92,15 +92,18 @@ class QuestionsUI(Tk):
 
         self.resizable(False, False)
 
-    def btn_clicked(self):
-        print("Button Clicked")
-
     # def practice_questions_window(self, username):
     #     self.clear_entry()
     #     self.question_update()
 
     def clear_entry(self):
         self.answer_entry.delete(0, END)
+
+    def btn_clicked(self):
+        self.destroy()
+        from MenuUI.MenuSelectionUI.MenuSelectionWindow import menu_select_option_window
+        # need to find out how to return to original window
+        print("Button Clicked")
 
     def question_update(self):
         global current_quest
@@ -111,7 +114,7 @@ class QuestionsUI(Tk):
             self.my_label1.config(text="Session Complete!")
             # self.img1.destroy()
         else:
-            answer_value = value1[current_quest-1]
+            answer_value = value1[current_quest - 1]
             self.my_label1.config(text=value.display_question())
             print(value.display_question() + " " + answer_value.show_answer())
             if self.stored_answer.get() == answer_value.show_answer():
