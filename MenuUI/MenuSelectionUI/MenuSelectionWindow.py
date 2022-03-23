@@ -11,7 +11,6 @@ def menu_select_option_window():
     # this takes the name from current user to be displayed back to them later on
     name = open("current_user.txt", "r")
     lines = name.readlines()
-    print(lines[0])
 
     # defines what each button can do
 

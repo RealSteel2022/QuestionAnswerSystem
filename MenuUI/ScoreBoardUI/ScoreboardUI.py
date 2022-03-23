@@ -4,8 +4,22 @@ import os
 directory_path = str(os.getcwd()) + "\MenuUI\ScoreBoardUI\\"
 
 
+def take_name_for_scoreboard():
+    global lines
+    # this takes the name from current user to be displayed back to them later on
+    name = open("current_user.txt", "r")
+    lines = name.readlines()
+    print(lines[0])
+
+
+global lines
+
+take_name_for_scoreboard()
+
+
 def btn_clicked():
-    print("Button Clicked")
+    window.destroy()
+    from MenuUI.MenuSelectionUI.MenuSelectionWindow import menu_select_option_window
 
 
 window = Tk()
@@ -60,7 +74,7 @@ canvas.create_text(
 
 canvas.create_text(
     570.0, 190.5,
-    text="Well done (insert) here is your score",
+    text="Well done " + lines[0] + " here is your score",
     fill="#737373",
     font=("Eczar-SemiBold", int(24.0)))
 
