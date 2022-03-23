@@ -15,7 +15,6 @@ def menu_select_option_window():
     # defines what each button can do
 
     def question_test_button():
-        print("Questions testing clicked")
         menu_select_ui.withdraw()
         os.system("MenuUI\QuestionPractice\QuestionsPracticerUI.py")
         # from MenuUI.QuestionPractice.QuestionsPracticerUI import run_system

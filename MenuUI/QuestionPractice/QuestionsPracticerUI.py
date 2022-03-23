@@ -1,6 +1,7 @@
 import os
 from tkinter import *
 from com.qa.system.QuestionAndAnswerDB import get_questions_answers
+from com.qa.system.ScoreService import scored_point, leaderboard_score
 
 value1 = get_questions_answers()
 directory_path = str(os.getcwd()) + "\MenuUI\QuestionPractice\\"
@@ -113,25 +114,21 @@ class QuestionsUI(Tk):
         value = value1[current_quest]
         if value.display_question() == "End of Set":
             # when the set is finished need to use this
-            print("Finished loop")
             self.my_label1.config(text="Session Complete!")
-            global stop_session
-            stop_session = True
-            print(stop_session)
             self.finished_session()
-            # self.img1.destroy()
         else:
             answer_value = value1[current_quest - 1]
             self.my_label1.config(text=value.display_question())
             print(value.display_question() + " " + answer_value.show_answer())
             if self.stored_answer.get() == answer_value.show_answer():
                 print("Correct")
+                scored_point()
+                # add something to tell this on UI to the user
             else:
                 print(self.stored_answer.get())
-                print(answer_value.show_answer())
+                # use this to tell user they got it wrong and what the correct answer would have been
             current_quest += 1
             self.clear_entry()
 
 
-print("Amogus")
 QuestionsUI().mainloop()
