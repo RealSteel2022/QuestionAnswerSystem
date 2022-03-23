@@ -8,12 +8,13 @@ user = "Click enter to begin"
 my_label1 = ""
 
 current_quest = 0
+stop_session = False
 
 
 def kick_off_questions_ui():
     # get_questions_answers() # sets up questions
     app = QuestionsUI()
-    app.mainloop()
+    # app.mainloop()
 
 
 class QuestionsUI(Tk):
@@ -99,11 +100,13 @@ class QuestionsUI(Tk):
     def clear_entry(self):
         self.answer_entry.delete(0, END)
 
+    def finished_session(self):
+        self.destroy()
+        os.system("MenuUI\ScoreBoardUI\ScoreboardUI.py")
+
     def btn_clicked(self):
         self.destroy()
         from MenuUI.MenuSelectionUI.MenuSelectionWindow import menu_select_option_window
-        # need to find out how to return to original window
-        print("Button Clicked")
 
     def question_update(self):
         global current_quest
@@ -112,6 +115,10 @@ class QuestionsUI(Tk):
             # when the set is finished need to use this
             print("Finished loop")
             self.my_label1.config(text="Session Complete!")
+            global stop_session
+            stop_session = True
+            print(stop_session)
+            self.finished_session()
             # self.img1.destroy()
         else:
             answer_value = value1[current_quest - 1]
@@ -124,3 +131,7 @@ class QuestionsUI(Tk):
                 print(answer_value.show_answer())
             current_quest += 1
             self.clear_entry()
+
+
+print("Amogus")
+QuestionsUI().mainloop()
