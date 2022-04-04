@@ -23,7 +23,7 @@ global current_user
 
 take_name_for_scoreboard()
 leaderboard_score()
-high_score_for_scoreboard()
+# high_score_for_scoreboard()
 
 
 def btn_clicked():
@@ -89,7 +89,7 @@ canvas.create_text(
 
 canvas.create_text(
     386.0, 404.5,
-    text="High-score: " + current_high_score[0],
+    text="High-score: ", # + current_high_score[0],
     fill="#737373",
     font=("Eczar-SemiBold", int(24.0)))
 
