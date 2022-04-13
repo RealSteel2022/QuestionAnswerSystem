@@ -1,0 +1,3 @@
+from MenuUI.QuestionPractice.QuestionsPracticerUI import kick_off_questions_ui
+
+kick_off_questions_ui()
