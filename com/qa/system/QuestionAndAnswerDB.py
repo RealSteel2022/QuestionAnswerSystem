@@ -14,9 +14,11 @@ def store_user_input_questions(q_a):
     # print("store function" + str(question_list))
 
 
-def get_questions_answers(loaded=None):
+def get_questions_answers():
     # print("get function " + str(question_list))
-    if loaded == "maths":
+    subject = open("selected_subject.txt", "r")
+    lines = subject.readlines()
+    if lines[0] == "maths":
         pre_load_maths()
     else:
         pre_load_history()
@@ -28,6 +30,7 @@ def get_questions_answers(loaded=None):
 def pre_load_history():
     c.execute("SELECT * FROM stored_questions WHERE subject = 'History'")
     rows = c.fetchall()
+    
     for row in rows:
         q = AvailableQuestionsAnswers(row[0], row[1])
         question_and_answers_list.append(q)

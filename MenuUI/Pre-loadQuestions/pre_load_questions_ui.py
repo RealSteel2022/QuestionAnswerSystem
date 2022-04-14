@@ -1,8 +1,6 @@
 import os
 from tkinter import *
 
-global loaded
-
 
 def back_btn_clicked():
     window.destroy()
@@ -10,12 +8,16 @@ def back_btn_clicked():
 
 
 def maths_btn_clicked():
-    global loaded
-    loaded = "maths"
+    file_subject = open("selected_subject" + ".txt", "w")
+    file_subject.write("maths")
+    file_subject.close()
     print("Maths pre-loaded")
 
 
 def history_btn_clicked():
+    file_subject = open("selected_subject" + ".txt", "w")
+    file_subject.write("history")
+    file_subject.close()
     print("History pre-loaded")
     # need to add it into the display
 
