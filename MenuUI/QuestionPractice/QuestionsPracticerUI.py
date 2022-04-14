@@ -112,7 +112,7 @@ class QuestionsUI(Tk):
     def question_update(self):
         global current_quest
         value = value1[current_quest]
-        if value.display_question() == "How big was Henry VIII privy council?":
+        if value.display_question() == "End of Set":
             # when the set is finished need to use this
             self.my_label1.config(text="Session Complete!")
             self.finished_session()

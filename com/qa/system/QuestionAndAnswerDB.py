@@ -14,9 +14,14 @@ def store_user_input_questions(q_a):
     # print("store function" + str(question_list))
 
 
-def get_questions_answers():
+def get_questions_answers(loaded=None):
     # print("get function " + str(question_list))
-    pre_load_history()  # remove this once done
+    if loaded == "maths":
+        pre_load_maths()
+    else:
+        pre_load_history()
+    # pre_load_history()  # remove this once done
+    print(question_and_answers_list)
     return question_and_answers_list
 
 
@@ -24,12 +29,11 @@ def pre_load_history():
     c.execute("SELECT * FROM stored_questions WHERE subject = 'History'")
     rows = c.fetchall()
     for row in rows:
-        sql_append = f"{row[0]} {row[1]}"
-        print(sql_append)
-        question_and_answers_list.append(sql_append)
+        q = AvailableQuestionsAnswers(row[0], row[1])
+        question_and_answers_list.append(q)
+    print(question_and_answers_list)
 
-    q4 = AvailableQuestionsAnswers("End of Set", "Finished")
-    question_and_answers_list.append(q4)
+    question_and_answers_list.append(AvailableQuestionsAnswers("End of Set", "Finished"))
 
     return question_and_answers_list
 

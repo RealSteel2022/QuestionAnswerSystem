@@ -1,26 +1,22 @@
 import os
 from tkinter import *
 
-global loaded
-
 
 def back_btn_clicked():
     window.destroy()
     from MenuUI.MenuSelectionUI.MenuSelectionWindow import menu_select_option_window
 
 
-def maths_btn_clicked():
-    global loaded
-    loaded = "maths"
-    print("Maths pre-loaded")
+directory_path = str(os.getcwd()) + "\MenuUI\EditingQuestions\\"
 
 
-def history_btn_clicked():
-    print("History pre-loaded")
-    # need to add it into the display
+def subject_btn_clicked():
+    print("Subject clicked")
 
 
-directory_path = str(os.getcwd()) + "\MenuUI\Pre-loadQuestions\\"
+def questions_btn_clicked():
+    print("Questions clicked")
+
 
 window = Tk()
 
@@ -46,45 +42,39 @@ b0 = Button(
     image=img0,
     borderwidth=0,
     highlightthickness=0,
-    command=back_btn_clicked,
+    command=subject_btn_clicked,
     relief="flat")
 
 b0.place(
-    x=926, y=707,
-    width=187,
-    height=65)
-
-canvas.create_text(
-    569.5, 259.5,
-    text="Pick a subject below",
-    fill="#737373",
-    font=("Eczar-SemiBold", int(24.0)))
+    x=326, y=347,
+    width=215,
+    height=100)
 
 img1 = PhotoImage(file=directory_path + "img1.png")
 b1 = Button(
     image=img1,
     borderwidth=0,
     highlightthickness=0,
-    command=maths_btn_clicked,
+    command=questions_btn_clicked,
     relief="flat")
 
 b1.place(
-    x=381, y=308,
-    width=155,
-    height=45)
+    x=621, y=347,
+    width=216,
+    height=100)
 
 img2 = PhotoImage(file=directory_path + "img2.png")
 b2 = Button(
     image=img2,
     borderwidth=0,
     highlightthickness=0,
-    command=history_btn_clicked,
+    command=back_btn_clicked,
     relief="flat")
 
 b2.place(
-    x=602, y=309,
-    width=155,
-    height=45)
+    x=926, y=707,
+    width=187,
+    height=65)
 
 window.resizable(False, False)
 window.mainloop()

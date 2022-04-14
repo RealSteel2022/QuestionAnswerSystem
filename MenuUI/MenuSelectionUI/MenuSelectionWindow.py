@@ -3,7 +3,6 @@ from tkinter import *
 
 from com.qa.system.MenuPreloadedQuestions import pre_load_menu_service
 
-
 directory_path = str(os.getcwd()) + "\MenuUI\MenuSelectionUI\\"
 
 
@@ -25,6 +24,8 @@ def menu_select_option_window():
         # Scoreboard service
 
     def edit_questions_button():
+        menu_select_ui.withdraw()
+        os.system("MenuUI\EditingQuestions\EditQuestionsUI.py")
         print("Edit questions clicked")
         # Edit questions service
 
