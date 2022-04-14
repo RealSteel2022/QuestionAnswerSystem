@@ -3,6 +3,9 @@ from tkinter import *
 
 directory_path = str(os.getcwd()) + "\MenuUI\SelectionScoreboard\\"
 
+recent_subject = open("selected_subject.txt", "r")
+lines = recent_subject.readlines()
+
 def btn_clicked():
     window.destroy()
     from MenuUI.MenuSelectionUI.MenuSelectionWindow import menu_select_option_window
@@ -60,7 +63,7 @@ canvas.create_text(
 
 canvas.create_text(
     672.0, 390.5,
-    text = "(Subject)",
+    text = lines[0],
     fill = "#737373",
     font = ("Eczar-SemiBold", int(24.0)))
 
