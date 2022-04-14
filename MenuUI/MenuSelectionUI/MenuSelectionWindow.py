@@ -20,7 +20,8 @@ def menu_select_option_window():
         # from MenuUI.QuestionPractice.QuestionsPracticerUI import run_system
 
     def scoreboard_button():
-        print("Scoreboard clicked")
+        menu_select_ui.withdraw()
+        os.system("MenuUI\SelectionScoreboard\selection_scoreboard_ui.py")
         # Scoreboard service
 
     def edit_questions_button():
