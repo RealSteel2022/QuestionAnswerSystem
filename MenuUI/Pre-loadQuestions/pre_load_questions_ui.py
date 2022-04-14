@@ -2,6 +2,10 @@ import os
 from tkinter import *
 
 
+def enter_btn_clicked():
+    print("data entered")
+
+
 def back_btn_clicked():
     window.destroy()
     from MenuUI.MenuSelectionUI.MenuSelectionWindow import menu_select_option_window
@@ -48,32 +52,26 @@ b0 = Button(
     image=img0,
     borderwidth=0,
     highlightthickness=0,
-    command=back_btn_clicked,
+    command=enter_btn_clicked,
     relief="flat")
 
 b0.place(
-    x=926, y=707,
-    width=187,
-    height=65)
-
-canvas.create_text(
-    569.5, 259.5,
-    text="Pick a subject below",
-    fill="#737373",
-    font=("Eczar-SemiBold", int(24.0)))
+    x=485, y=644,
+    width=170,
+    height=88)
 
 img1 = PhotoImage(file=directory_path + "img1.png")
 b1 = Button(
     image=img1,
     borderwidth=0,
     highlightthickness=0,
-    command=maths_btn_clicked,
+    command=back_btn_clicked,
     relief="flat")
 
 b1.place(
-    x=381, y=308,
-    width=155,
-    height=45)
+    x=926, y=707,
+    width=187,
+    height=65)
 
 img2 = PhotoImage(file=directory_path + "img2.png")
 b2 = Button(
@@ -84,9 +82,37 @@ b2 = Button(
     relief="flat")
 
 b2.place(
-    x=602, y=309,
-    width=155,
-    height=45)
+    x=570, y=333,
+    width=199,
+    height=100)
+
+img3 = PhotoImage(file=directory_path + "img3.png")
+b3 = Button(
+    image=img3,
+    borderwidth=0,
+    highlightthickness=0,
+    command=maths_btn_clicked,
+    relief="flat")
+
+b3.place(
+    x=361, y=329,
+    width=199,
+    height=107)
+
+entry0_img = PhotoImage(file=directory_path + "img_textBox0.png")
+entry0_bg = canvas.create_image(
+    570.0, 580.5,
+    image=entry0_img)
+
+entry0 = Entry(
+    bd=0,
+    bg="#58bbc2",
+    highlightthickness=0)
+
+entry0.place(
+    x=424, y=554,
+    width=292,
+    height=51)
 
 window.resizable(False, False)
 window.mainloop()
