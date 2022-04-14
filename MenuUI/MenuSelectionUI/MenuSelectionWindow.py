@@ -29,7 +29,8 @@ def menu_select_option_window():
 
     def pre_load_questions_button():
         print("Pre-load questions clicked")
-        pre_load_menu_service()
+        menu_select_ui.withdraw()
+        os.system("MenuUI\Pre-loadQuestions\pre_load_questions_ui.py")
         # Pre-load question service
 
     # =============== background window set up ===============

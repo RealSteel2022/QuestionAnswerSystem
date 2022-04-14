@@ -1,8 +1,13 @@
 from com.qa.system.AvailableQuestionsAnswers import AvailableQuestionsAnswers
+import sqlite3
+
+conn = sqlite3.connect('com\qa\system\questions.db')
+c = conn.cursor()
 
 question_and_answers_list = []  # can easily be switched to a file/external database as this can
-# just be replaced with a file
 
+
+# just be replaced with a file
 
 def store_user_input_questions(q_a):
     question_and_answers_list.append(q_a)
@@ -11,19 +16,19 @@ def store_user_input_questions(q_a):
 
 def get_questions_answers():
     # print("get function " + str(question_list))
-    pre_load_history() # remove this once done
+    pre_load_history()  # remove this once done
     return question_and_answers_list
 
 
 def pre_load_history():
-    q1 = AvailableQuestionsAnswers("When did Nixon become president?", "1969")
-    q2 = AvailableQuestionsAnswers("How many wives did Henry VIII have?", "6")
-    q3 = AvailableQuestionsAnswers("How big was Henry VIII's privy council?", "12 members")
-    q4 = AvailableQuestionsAnswers("End of Set", "Finished")
+    c.execute("SELECT * FROM stored_questions WHERE subject = 'History'")
+    rows = c.fetchall()
+    for row in rows:
+        sql_append = f"{row[0]} {row[1]}"
+        print(sql_append)
+        question_and_answers_list.append(sql_append)
 
-    question_and_answers_list.append(q1)
-    question_and_answers_list.append(q2)
-    question_and_answers_list.append(q3)
+    q4 = AvailableQuestionsAnswers("End of Set", "Finished")
     question_and_answers_list.append(q4)
 
     return question_and_answers_list
