@@ -9,6 +9,10 @@ def btn_clicked():
     os.system("MenuUI\EditingQuestions\EditQuestionsUI.py")
 
 
+def enter_btn_clicked():
+    print("data entered")
+
+
 window = Tk()
 
 window.geometry("1139x794")
@@ -33,58 +37,79 @@ b0 = Button(
     image=img0,
     borderwidth=0,
     highlightthickness=0,
-    command=btn_clicked,
+    command=enter_btn_clicked,
     relief="flat")
 
 b0.place(
+    x=485, y=625,
+    width=170,
+    height=88)
+
+img1 = PhotoImage(file=directory_path + "img1.png")
+b1 = Button(
+    image=img1,
+    borderwidth=0,
+    highlightthickness=0,
+    command=btn_clicked,
+    relief="flat")
+
+b1.place(
     x=926, y=707,
     width=187,
     height=65)
 
 entry0_img = PhotoImage(file=directory_path + "img_textBox0.png")
 entry0_bg = canvas.create_image(
-    570.0, 397.0,
+    570.0, 359.5,
     image=entry0_img)
 
 entry0 = Entry(
-    bd=0,
     bg="#58bbc2",
-    highlightthickness=0)
+    font=("Spartan-Regular", int(24.0)),
+    borderwidth=0,
+    highlightthickness=0,
+    relief="flat")
+
 
 entry0.place(
-    x=424, y=365,
+    x=424, y=333,
     width=292,
-    height=62)
+    height=51)
 
 entry1_img = PhotoImage(file=directory_path + "img_textBox1.png")
 entry1_bg = canvas.create_image(
-    570.0, 527.0,
+    570.0, 456.5,
     image=entry1_img)
 
 entry1 = Entry(
-    bd=0,
     bg="#58bbc2",
-    highlightthickness=0)
+    font=("Spartan-Regular", int(24.0)),
+    borderwidth=0,
+    highlightthickness=0,
+    relief="flat")
 
 entry1.place(
-    x=424, y=495,
+    x=424, y=430,
     width=292,
-    height=62)
+    height=51)
 
 entry2_img = PhotoImage(file=directory_path + "img_textBox2.png")
 entry2_bg = canvas.create_image(
-    570.0, 675.0,
+    570.0, 553.5,
     image=entry2_img)
 
 entry2 = Entry(
-    bd=0,
     bg="#58bbc2",
-    highlightthickness=0)
+    font=("Spartan-Regular", int(24.0)),
+    borderwidth=0,
+    highlightthickness=0,
+    relief="flat")
+
 
 entry2.place(
-    x=424, y=643,
+    x=424, y=527,
     width=292,
-    height=62)
+    height=51)
 
 window.resizable(False, False)
 window.mainloop()
