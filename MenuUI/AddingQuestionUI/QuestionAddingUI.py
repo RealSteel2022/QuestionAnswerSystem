@@ -1,11 +1,14 @@
 import os
 from tkinter import *
 
+from com.qa.system.StoringUserQuestions import storing_user_questions
+
 directory_path = str(os.getcwd()) + "\MenuUI\AddingQuestionUI\\"
 
 
 def enter_btn_clicked():
     print(stored_subject.get() + stored_question.get() + stored_answer.get())
+    storing_user_questions(stored_subject.get(), stored_question.get(), stored_answer.get())
     clear_entry()
 
 
