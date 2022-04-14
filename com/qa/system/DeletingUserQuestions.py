@@ -1,24 +1,18 @@
 import sqlite3
 
 
-def storing_user_questions(stored_subject, stored_question, stored_answer):
+def deleting_user_questions(stored_subject, stored_question):
     conn = sqlite3.connect('com\qa\system\questions.db')
 
     with conn:
         c = conn.cursor()
-        #
-        # c.execute("""CREATE TABLE stored_questions (
-        #             question text,
-        #             answer text,
-        #             subject text
-        #             )""")
 
-        executing_sql = """INSERT INTO stored_questions 
-        (question, answer, subject)
-        VALUES ('{}', '{}', '{}');""".format(
-            stored_question, stored_answer, stored_subject)
+        deleting_sql = """DELETE FROM stored_questions WHERE
+        (question)
+        = ('{}');""".format(
+            stored_question)
 
-        c.execute(executing_sql)
+        c.execute(deleting_sql)
 
         c.execute("SELECT * FROM stored_questions")
 

@@ -1,11 +1,14 @@
 import os
 from tkinter import *
 
+from com.qa.system.DeletingUserQuestions import deleting_user_questions
+
 directory_path = str(os.getcwd()) + "\MenuUI\DeletingQuestionUI\\"
 
 
 def enter_btn_clicked():
     print(stored_subject.get() + stored_question.get())
+    deleting_user_questions(stored_subject.get(), stored_question.get())
     clear_entry()
 
 
