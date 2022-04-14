@@ -17,6 +17,8 @@ def add_btn_clicked():
 
 
 def delete_btn_clicked():
+    window.withdraw()
+    os.system("MenuUI\DeletingQuestionUI\QuestionDeletingUI.py")
     print("Delete clicked")
 
 
