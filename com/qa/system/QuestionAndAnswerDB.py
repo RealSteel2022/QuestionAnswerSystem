@@ -20,9 +20,10 @@ def get_questions_answers():
     lines = subject.readlines()
     if lines[0] == "maths":
         pre_load_maths()
-    else:
+    elif lines[0] == "history":
         pre_load_history()
-    # pre_load_history()  # remove this once done
+    else:
+        pre_load_custom()
     print(question_and_answers_list)
     return question_and_answers_list
 
@@ -30,7 +31,28 @@ def get_questions_answers():
 def pre_load_history():
     c.execute("SELECT * FROM stored_questions WHERE subject = 'History'")
     rows = c.fetchall()
-    
+
+    for row in rows:
+        q = AvailableQuestionsAnswers(row[0], row[1])
+        question_and_answers_list.append(q)
+    print(question_and_answers_list)
+
+    question_and_answers_list.append(AvailableQuestionsAnswers("End of Set", "Finished"))
+
+    return question_and_answers_list
+
+
+def pre_load_custom():
+    subject = open("selected_subject.txt", "r")
+    lines = subject.readlines()
+    with conn:
+        custom_load_sql = """SELECT * FROM stored_questions WHERE
+        (subject)
+        = ('{}');""".format(
+            lines[0])
+        c.execute(custom_load_sql)
+    rows = c.fetchall()
+
     for row in rows:
         q = AvailableQuestionsAnswers(row[0], row[1])
         question_and_answers_list.append(q)

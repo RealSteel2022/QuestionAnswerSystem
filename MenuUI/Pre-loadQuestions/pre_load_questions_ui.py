@@ -3,7 +3,11 @@ from tkinter import *
 
 
 def enter_btn_clicked():
-    print("data entered")
+    print(load_subject.get())
+    file_subject = open("selected_subject" + ".txt", "w")
+    file_subject.write(load_subject.get())
+    file_subject.close()
+    clear_entry()
 
 
 def back_btn_clicked():
@@ -99,20 +103,30 @@ b3.place(
     width=199,
     height=107)
 
+load_subject = StringVar()
+
 entry0_img = PhotoImage(file=directory_path + "img_textBox0.png")
 entry0_bg = canvas.create_image(
     570.0, 580.5,
     image=entry0_img)
 
 entry0 = Entry(
-    bd=0,
     bg="#58bbc2",
-    highlightthickness=0)
+    textvariable=load_subject,
+    font=("Spartan-Regular", int(24.0)),
+    borderwidth=0,
+    highlightthickness=0,
+    relief="flat")
 
 entry0.place(
     x=424, y=554,
     width=292,
     height=51)
+
+
+def clear_entry():
+    entry0.delete(0, END)
+
 
 window.resizable(False, False)
 window.mainloop()
