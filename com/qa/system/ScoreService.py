@@ -7,8 +7,8 @@ session_score = 0
 
 
 def scored_point():
-    global session_score
-    global SessionScoreAccumulator.session_score_accumulator
+    # global session_score
+    # global SessionScoreAccumulator.session_score_accumulator
     print("point scored")
     # session_score += 1
     SessionScoreAccumulator.session_score_accumulator += 1
@@ -22,12 +22,11 @@ def update_high_score():
 
 def leaderboard_score():
     if int(3) > int(2):
-        print("New high-score of " + str(SessionScoreAccumulator.session_score_accumulator))
+        print("New high-score of " + "3")
         update_high_score()
     else:
-        print("You were unable to beat your previous high-score of " + str(
-            SessionScoreAccumulator.session_score_accumulator) + " your session score was "
-              + str(SessionScoreAccumulator.session_score_accumulator))
+        print("You were unable to beat your previous high-score of " + "3" + " your session score was "
+              + "2")
         # SessionScoreAccumulator.initialize()
 
 # I've got the program running but it doesn't clear the score when ti starts need to try and add that in then
