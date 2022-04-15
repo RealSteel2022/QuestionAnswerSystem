@@ -2,6 +2,7 @@ import os
 from tkinter import *
 from com.qa.system.QuestionAndAnswerDB import get_questions_answers
 from com.qa.system.ScoreService import scored_point, leaderboard_score
+# from com.qa.system.SessionScoreAccumulator import initialize
 
 value1 = get_questions_answers()
 directory_path = str(os.getcwd()) + "\MenuUI\QuestionPractice\\"
@@ -122,7 +123,8 @@ class QuestionsUI(Tk):
             print(value.display_question() + " " + answer_value.show_answer())
             if self.stored_answer.get() == answer_value.show_answer():
                 print("Correct")
-                scored_point()
+                global user_score
+                user_score = scored_point()
                 # add something to tell this on UI to the user
             else:
                 print(self.stored_answer.get())
