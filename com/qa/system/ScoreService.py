@@ -11,8 +11,6 @@ def scored_point():
     # global SessionScoreAccumulator.session_score_accumulator
     print("point scored")
     # session_score += 1
-    SessionScoreAccumulator.session_score_accumulator += 1
-    print(SessionScoreAccumulator.session_score_accumulator)
     # return session_score
 
 
