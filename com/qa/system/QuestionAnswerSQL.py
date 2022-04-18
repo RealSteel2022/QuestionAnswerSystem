@@ -11,6 +11,13 @@ with conn:
     #             subject text
     #             )""")
 
+    # c.execute("""CREATE TABLE user_high_score (
+    #             score_key int,
+    #             user text,
+    #             high_score int
+    #             )""")
+
+
     # c.execute("INSERT INTO stored_questions VALUES ('How big was Henry VIII privy council?', '12 members', 'History')")
 
     c.execute("SELECT * FROM stored_questions")

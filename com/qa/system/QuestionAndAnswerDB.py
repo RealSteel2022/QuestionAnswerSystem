@@ -63,6 +63,30 @@ def pre_load_custom():
     return question_and_answers_list
 
 
+def get_highscore_db(username):
+    with conn:
+        custom_load_sql = """SELECT high_score FROM user_high_score WHERE
+        user
+        = ('{}');""".format(username)
+        c.execute(custom_load_sql)
+    row = c.fetchone()
+    print(row)
+    return row[0]
+
+    # c.execute("""CREATE TABLE user_high_score (
+    #             user text,
+    #             high_score int
+    #             )""")
+
+
+def set_highscore_db(username, score):
+    with conn:
+        custom_load_sql = """UPDATE user_high_score SET user = ?, high_score = ? WHERE
+        user = ?;"""
+        c.execute(custom_load_sql, (username, score, username))
+        conn.commit()
+
+
 def pre_load_maths():
     q1 = AvailableQuestionsAnswers("What is the derivative", "23")
     q2 = AvailableQuestionsAnswers("What is pi 4 d.p.", "3.1426")
